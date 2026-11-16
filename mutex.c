@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>
 
 pthread_mutex_t lock = NULL;
 int j = 0;
 
-void do_process() {
+void* do_process() {
 
     pthread_mutex_lock( &lock );
     int i = 0;
@@ -30,7 +31,7 @@ int main_mutex( void ) {
     }
     j = 0;
     
-    pthread_create( &t1, NULL, (void**)do_process, NULL );
+    pthread_create( &t1, NULL, do_process, NULL );
     pthread_create( &t2, NULL, do_process, NULL );
     
     pthread_join( t1, NULL );
