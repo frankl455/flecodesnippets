@@ -10,10 +10,13 @@ int main_threads();
 int main_threadargs();
 int main_threadfunc();
 int main_mutex();
+int main_conditions();
+int main_socketserver();
+int main_socketclient();
 
 long long convertDecimalToBinary( int n );
 
-int main (void) {
+int main(int argc, char **argv) {
 
 //    main_function_pointers();
 //    main_interprocess_comm();
@@ -24,7 +27,10 @@ int main (void) {
 //    main_threads();
 //    main_threadargs();
 //    main_threadfunc();
-main_mutex();
+//    main_mutex();
+//    main_conditions();
+//    main_socketserver();
+ main_socketclient();
 
     return 0;
 }

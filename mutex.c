@@ -18,11 +18,11 @@ void* do_process() {
     }
     printf( "...Done\n" );
     pthread_mutex_unlock( &lock );
+    return 0;
 }
 
 int main_mutex( void ) {
     
-    int err = 0;
     pthread_t t1, t2;
     
     if(pthread_mutex_init( &lock, NULL ) != 0) {
